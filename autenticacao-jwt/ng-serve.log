@@ -27,3 +27,70 @@ Application bundle generation complete. [1.494 seconds] - 2026-06-29T23:37:03.84
 Watch mode enabled. Watching for file changes...
 NOTE: Raw file sizes do not reflect development server per-request transformations.
   [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4200[22m/[39m
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 14.28 kB | 
+
+Application bundle generation complete. [0.324 seconds] - 2026-06-29T23:39:32.563Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 14.38 kB | 
+
+Application bundle generation complete. [0.069 seconds] - 2026-06-29T23:39:33.362Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 14.38 kB | 
+
+Lazy chunk files    | Names | Raw size
+chunk-TSYPSAJI.js   | login | 12.82 kB | 
+
+Application bundle generation complete. [0.283 seconds] - 2026-06-29T23:41:03.097Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.323 seconds] - 2026-06-29T23:44:43.711Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.169 seconds] - 2026-06-29T23:44:44.247Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.170 seconds] - 2026-06-29T23:44:44.897Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.136 seconds] - 2026-06-29T23:44:45.461Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                |  Raw size
+main.js             | main                 |  14.38 kB | 
+styles.css          | styles               |   3.48 kB | 
+chunk-I2MN4PXH.js   | -                    |   2.52 kB | 
+chunk-I3YAVREH.js   | -                    | 352 bytes | 
+
+                    | Initial total        |  20.73 kB
+
+Lazy chunk files    | Names                |  Raw size
+chunk-O7STQJE7.js   | produtos             |  19.53 kB | 
+chunk-V4UNJIUH.js   | produto-formulario   |  15.14 kB | 
+chunk-QEGFRJNH.js   | categorias           |  14.64 kB | 
+chunk-TSYPSAJI.js   | login                |  12.82 kB | 
+chunk-34APDWYI.js   | categoria-formulario |  11.46 kB | 
+chunk-GY3A4D22.js   | -                    |   6.87 kB | 
+chunk-GMB23N6J.js   | -                    |   4.94 kB | 
+chunk-736RGMQ7.js   | -                    |   1.40 kB | 
+chunk-HYSGM4JW.js   | -                    |   1.03 kB | 
+
+Application bundle generation complete. [0.107 seconds] - 2026-06-29T23:45:44.204Z
+
+Page reload sent to client(s).

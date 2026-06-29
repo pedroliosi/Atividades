@@ -1,0 +1,32 @@
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'string[] | null | undefined' is not assignable to parameter of type 'string[]'.
+  Type 'undefined' is not assignable to type 'string[]'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/image-url.ts:5:26:
+[37m      5 │   return normalizarImagem([32mimagens[37m, PLACEHOLDER_PRODUTO);
+        ╵                           [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'string[] | null | undefined' is not assignable to parameter of type 'string[]'.
+  Type 'undefined' is not assignable to type 'string[]'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/image-url.ts:5:26:
+[37m      5 │   return normalizarImagem([32mimagens[37m, PLACEHOLDER_PRODUTO);
+        ╵                           [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'string[] | null | undefined' is not assignable to parameter of type 'string[]'.
+  Type 'undefined' is not assignable to type 'string[]'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/image-url.ts:5:26:
+[37m      5 │   return normalizarImagem([32mimagens[37m, PLACEHOLDER_PRODUTO);
+        ╵                           [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'string[] | null | undefined' is not assignable to parameter of type 'string[]'.
+  Type 'undefined' is not assignable to type 'string[]'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/image-url.ts:5:26:
+[37m      5 │   return normalizarImagem([32mimagens[37m, PLACEHOLDER_PRODUTO);
+        ╵                           [32m~~~~~~~[0m
+
+
