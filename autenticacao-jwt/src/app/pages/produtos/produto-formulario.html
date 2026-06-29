@@ -1,0 +1,62 @@
+<section class="pagina">
+  <div class="cabecalho-pagina">
+    <div>
+      <span>Produtos</span>
+      <h2>{{ titulo() }}</h2>
+    </div>
+    <a class="btn btn-secundario" routerLink="/produtos">Voltar</a>
+  </div>
+
+  @if (sucesso()) {
+    <div class="mensagem sucesso">{{ sucesso() }}</div>
+  }
+
+  @if (erro()) {
+    <div class="mensagem erro">{{ erro() }}</div>
+  }
+
+  <app-loading [mostrar]="carregando()" texto="Carregando formulário..." />
+
+  @if (!carregando()) {
+    <form class="form-card" [formGroup]="form" (ngSubmit)="salvar()">
+      <label>
+        Nome
+        <input type="text" formControlName="nome" />
+      </label>
+
+      <label>
+        Preço
+        <input type="number" min="1" formControlName="preco" />
+      </label>
+
+      <label class="linha-inteira">
+        Descrição
+        <textarea rows="5" formControlName="descricao"></textarea>
+      </label>
+
+      <label>
+        Categoria
+        <select formControlName="categoria">
+          <option value="">Selecione</option>
+          @for (categoria of categorias(); track categoria.id) {
+            <option [value]="categoria.id">{{ categoria.name }}</option>
+          }
+        </select>
+      </label>
+
+      <label>
+        Imagem
+        <input type="url" formControlName="imagem" />
+      </label>
+
+      @if (form.invalid && form.touched) {
+        <div class="mensagem erro linha-inteira">Preencha todos os campos obrigatórios corretamente.</div>
+      }
+
+      <div class="form-acoes linha-inteira">
+        <button class="btn btn-primario" type="submit">Salvar</button>
+        <button class="btn btn-secundario" type="button" (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  }
+</section>

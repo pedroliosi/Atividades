@@ -1,0 +1,26 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="marca">
+      <span>AJ</span>
+      <strong>Autenticação JWT</strong>
+    </div>
+
+    <nav>
+      <a routerLink="/produtos" routerLinkActive="ativo">🏠 Produtos</a>
+      <a routerLink="/categorias" routerLinkActive="ativo">📂 Categorias</a>
+      <button type="button" (click)="sair()">🚪 Sair</button>
+    </nav>
+  </aside>
+
+  <div class="conteudo">
+    <header class="topo">
+      <h1>Autenticação JWT</h1>
+    </header>
+
+    <main>
+      <router-outlet />
+    </main>
+
+    <footer>Desenvolvido em Angular</footer>
+  </div>
+</div>

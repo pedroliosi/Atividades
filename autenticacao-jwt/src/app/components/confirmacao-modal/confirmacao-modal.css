@@ -1,0 +1,49 @@
+.modal-backdrop {
+  align-items: center;
+  animation: aparecer 0.2s ease;
+  background: rgba(15, 23, 42, 0.46);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 40;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+  max-width: 420px;
+  padding: 26px;
+  width: 100%;
+}
+
+.modal h2 {
+  color: #172033;
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+}
+
+.modal p {
+  color: #52606d;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.modal-acoes {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

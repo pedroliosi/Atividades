@@ -1,0 +1,57 @@
+<section class="pagina">
+  <div class="cabecalho-pagina">
+    <div>
+      <span>Categorias</span>
+      <h2>Gerenciamento de categorias</h2>
+    </div>
+    <a class="btn btn-primario" routerLink="/categorias/nova">Nova Categoria</a>
+  </div>
+
+  <form class="filtros filtros-curtos" [formGroup]="filtros">
+    <label>
+      Nome
+      <input type="search" formControlName="nome" placeholder="Pesquisar categoria" />
+    </label>
+  </form>
+
+  @if (sucesso()) {
+    <div class="mensagem sucesso">{{ sucesso() }}</div>
+  }
+
+  @if (erro()) {
+    <div class="mensagem erro">{{ erro() }}</div>
+  }
+
+  <app-loading [mostrar]="carregando()" texto="Carregando categorias..." />
+
+  @if (!carregando() && !erro()) {
+    <div class="categorias-grid">
+      @for (categoria of categoriasFiltradas(); track categoria.id) {
+        <article class="categoria-card">
+          <img
+            #imagem
+            [src]="imagemCategoria(categoria)"
+            [alt]="categoria.name"
+            (error)="imagem.src = 'https://placehold.co/500x360/eef3f8/52606d?text=Categoria'"
+          />
+          <div>
+            <h3>{{ categoria.name }}</h3>
+            <div class="acoes">
+              <a class="btn btn-secundario" [routerLink]="['/categorias/editar', categoria.id]">Editar</a>
+              <button class="btn btn-perigo" type="button" (click)="abrirExclusao()">Excluir</button>
+            </div>
+          </div>
+        </article>
+      } @empty {
+        <div class="vazio-card">Nenhuma categoria encontrada.</div>
+      }
+    </div>
+  }
+</section>
+
+<app-confirmacao-modal
+  [aberto]="modalAberto()"
+  mensagem="Deseja realmente excluir este registro?"
+  (cancelar)="modalAberto.set(false)"
+  (confirmar)="confirmarExclusao()"
+/>

@@ -1,0 +1,12 @@
+@if (aberto) {
+  <div class="modal-backdrop" (click)="cancelar.emit()">
+    <section class="modal" (click)="$event.stopPropagation()">
+      <h2>Confirmar exclusão</h2>
+      <p>{{ mensagem }}</p>
+      <div class="modal-acoes">
+        <button class="btn btn-secundario" type="button" (click)="cancelar.emit()">Cancelar</button>
+        <button class="btn btn-perigo" type="button" (click)="confirmar.emit()">Excluir</button>
+      </div>
+    </section>
+  </div>
+}

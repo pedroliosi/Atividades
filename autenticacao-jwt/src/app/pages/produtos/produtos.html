@@ -1,0 +1,97 @@
+<section class="pagina">
+  <div class="cabecalho-pagina">
+    <div>
+      <span>Produtos</span>
+      <h2>Gerenciamento de produtos</h2>
+    </div>
+    <a class="btn btn-primario" routerLink="/produtos/novo">Novo Produto</a>
+  </div>
+
+  <form class="filtros" [formGroup]="filtros">
+    <label>
+      Nome
+      <input type="search" formControlName="nome" placeholder="Pesquisar produto" />
+    </label>
+    <label>
+      Categoria
+      <select formControlName="categoria">
+        <option value="">Todas</option>
+        @for (categoria of categorias(); track categoria.id) {
+          <option [value]="categoria.id">{{ categoria.name }}</option>
+        }
+      </select>
+    </label>
+    <label>
+      Preço mínimo
+      <input type="number" min="0" formControlName="precoMinimo" placeholder="0" />
+    </label>
+    <label>
+      Preço máximo
+      <input type="number" min="0" formControlName="precoMaximo" placeholder="999" />
+    </label>
+  </form>
+
+  @if (sucesso()) {
+    <div class="mensagem sucesso">{{ sucesso() }}</div>
+  }
+
+  @if (erro()) {
+    <div class="mensagem erro">{{ erro() }}</div>
+  }
+
+  <app-loading [mostrar]="carregando()" texto="Carregando produtos..." />
+
+  @if (!carregando() && !erro()) {
+    <div class="tabela-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Descrição resumida</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (produto of produtosFiltrados(); track produto.id) {
+            <tr>
+              <td>
+                <img
+                  #imagem
+                  [src]="imagemProduto(produto)"
+                  [alt]="produto.title"
+                  (error)="imagem.src = 'https://placehold.co/320x240/eef3f8/52606d?text=Produto'"
+                />
+              </td>
+              <td>
+                <strong>{{ produto.title }}</strong>
+              </td>
+              <td>{{ produto.price | currency: 'BRL' }}</td>
+              <td>{{ produto.category.name }}</td>
+              <td>{{ produto.description | slice: 0 : 90 }}{{ produto.description.length > 90 ? '...' : '' }}</td>
+              <td>
+                <div class="acoes">
+                  <a class="btn btn-secundario" [routerLink]="['/produtos/editar', produto.id]">Editar</a>
+                  <button class="btn btn-perigo" type="button" (click)="abrirExclusao(produto)">Excluir</button>
+                </div>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="6" class="vazio">Nenhum produto encontrado.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</section>
+
+<app-confirmacao-modal
+  [aberto]="modalAberto()"
+  mensagem="Deseja realmente excluir este registro?"
+  (cancelar)="modalAberto.set(false)"
+  (confirmar)="confirmarExclusao()"
+/>

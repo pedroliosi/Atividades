@@ -1,0 +1,35 @@
+<main class="login-page">
+  <section class="login-card">
+    <div class="login-chamada">
+      <span>Autenticação JWT</span>
+      <h1>Bem-vindo</h1>
+      <p>Acesse o gerenciamento da Platzi Fake Store API.</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="entrar()">
+      <label>
+        E-mail
+        <input type="email" formControlName="email" placeholder="usuario@email.com" autocomplete="email" />
+      </label>
+      @if (form.controls.email.touched && form.controls.email.invalid) {
+        <small>Informe um e-mail válido.</small>
+      }
+
+      <label>
+        Senha
+        <input type="password" formControlName="password" placeholder="Sua senha" autocomplete="current-password" />
+      </label>
+      @if (form.controls.password.touched && form.controls.password.invalid) {
+        <small>Informe a senha.</small>
+      }
+
+      @if (erro()) {
+        <div class="alerta erro">{{ erro() }}</div>
+      }
+
+      <button type="submit" [disabled]="carregando()">
+        {{ carregando() ? 'Entrando...' : 'Entrar' }}
+      </button>
+    </form>
+  </section>
+</main>

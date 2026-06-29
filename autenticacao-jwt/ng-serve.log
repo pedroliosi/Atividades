@@ -1,0 +1,29 @@
+
+> autenticacao-jwt@0.0.0 start
+> ng serve --host 127.0.0.1 --port 4200
+
+> Building...
+√ Building...
+Initial chunk files | Names                |  Raw size
+main.js             | main                 |  14.20 kB | 
+styles.css          | styles               |   3.48 kB | 
+chunk-I2MN4PXH.js   | -                    |   2.52 kB | 
+chunk-I3YAVREH.js   | -                    | 352 bytes | 
+
+                    | Initial total        |  20.55 kB
+
+Lazy chunk files    | Names                |  Raw size
+chunk-3O23ZPGY.js   | produtos             |  19.52 kB | 
+chunk-CLIV2UKQ.js   | produto-formulario   |  15.07 kB | 
+chunk-AIAEHEQG.js   | categorias           |  14.42 kB | 
+chunk-XSGM4GJR.js   | login                |  12.80 kB | 
+chunk-34APDWYI.js   | categoria-formulario |  11.46 kB | 
+chunk-GY3A4D22.js   | -                    |   6.87 kB | 
+chunk-GMB23N6J.js   | -                    |   4.94 kB | 
+chunk-736RGMQ7.js   | -                    |   1.40 kB | 
+
+Application bundle generation complete. [1.494 seconds] - 2026-06-29T23:37:03.843Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4200[22m/[39m

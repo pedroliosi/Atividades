@@ -1,0 +1,42 @@
+<section class="pagina">
+  <div class="cabecalho-pagina">
+    <div>
+      <span>Categorias</span>
+      <h2>{{ titulo() }}</h2>
+    </div>
+    <a class="btn btn-secundario" routerLink="/categorias">Voltar</a>
+  </div>
+
+  @if (sucesso()) {
+    <div class="mensagem sucesso">{{ sucesso() }}</div>
+  }
+
+  @if (erro()) {
+    <div class="mensagem erro">{{ erro() }}</div>
+  }
+
+  <app-loading [mostrar]="carregando()" texto="Carregando formulário..." />
+
+  @if (!carregando()) {
+    <form class="form-card" [formGroup]="form" (ngSubmit)="salvar()">
+      <label>
+        Nome
+        <input type="text" formControlName="nome" />
+      </label>
+
+      <label>
+        Imagem
+        <input type="url" formControlName="imagem" />
+      </label>
+
+      @if (form.invalid && form.touched) {
+        <div class="mensagem erro linha-inteira">Preencha todos os campos obrigatórios corretamente.</div>
+      }
+
+      <div class="form-acoes linha-inteira">
+        <button class="btn btn-primario" type="submit">Salvar</button>
+        <button class="btn btn-secundario" type="button" (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  }
+</section>
