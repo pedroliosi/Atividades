@@ -24,7 +24,7 @@ import { Component, Input } from '@angular/core';
     span {
       animation: girar 0.8s linear infinite;
       border: 3px solid #d7dee8;
-      border-top-color: #1f7aec;
+      border-top-color: #3a3f46;
       border-radius: 999px;
       height: 34px;
       width: 34px;

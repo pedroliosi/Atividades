@@ -1,13 +1,13 @@
 .app-shell {
-  background: #eef3f8;
+  background: #f3f4f6;
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
   min-height: 100vh;
 }
 
 .sidebar {
-  background: linear-gradient(180deg, #102033, #183b56);
-  box-shadow: 10px 0 30px rgba(16, 32, 51, 0.2);
+  background: linear-gradient(180deg, #23272f, #333942);
+  box-shadow: 10px 0 30px rgba(35, 39, 47, 0.2);
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -26,9 +26,9 @@
 
 .marca span {
   align-items: center;
-  background: #2dd4bf;
+  background: #f5f6f7;
   border-radius: 8px;
-  color: #102033;
+  color: #2f343a;
   display: grid;
   font-weight: 900;
   height: 46px;
@@ -49,7 +49,7 @@ nav a {
   background: transparent;
   border: 0;
   border-radius: 8px;
-  color: #d7e4ef;
+  color: #d9dde2;
   cursor: pointer;
   font: inherit;
   padding: 13px 14px;
@@ -99,9 +99,9 @@ nav a.ativo {
 
 .avatar {
   align-items: center;
-  background: #2dd4bf;
+  background: #f5f6f7;
   border-radius: 999px;
-  color: #102033;
+  color: #2f343a;
   display: grid;
   font-weight: 900;
   height: 44px;
@@ -127,12 +127,12 @@ nav a.ativo {
 }
 
 .usuario-info small {
-  color: #bfd2e4;
+  color: #c4c9cf;
   font-size: 0.78rem;
 }
 
 .seta {
-  color: #d7e4ef;
+  color: #d9dde2;
   font-size: 1.2rem;
   justify-self: end;
   transition: 0.2s ease;
@@ -177,7 +177,7 @@ nav a.ativo {
 }
 
 .topo h1 {
-  color: #172033;
+  color: #23272f;
   font-size: clamp(1.35rem, 2vw, 1.8rem);
   margin: 0;
 }

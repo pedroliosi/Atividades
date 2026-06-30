@@ -29,7 +29,9 @@ export class Produtos implements OnInit {
   readonly produtos = signal<Product[]>([]);
   readonly categorias = signal<Category[]>([]);
   readonly produtoSelecionado = signal<Product | null>(null);
+  readonly produtoDetalhe = signal<Product | null>(null);
   readonly modalAberto = signal(false);
+  readonly detalheAberto = signal(false);
 
   readonly filtros = this.fb.nonNullable.group({
     nome: [''],
@@ -82,6 +84,16 @@ export class Produtos implements OnInit {
   abrirExclusao(produto: Product): void {
     this.produtoSelecionado.set(produto);
     this.modalAberto.set(true);
+  }
+
+  abrirDetalhe(produto: Product): void {
+    this.produtoDetalhe.set(produto);
+    this.detalheAberto.set(true);
+  }
+
+  fecharDetalhe(): void {
+    this.detalheAberto.set(false);
+    this.produtoDetalhe.set(null);
   }
 
   confirmarExclusao(): void {

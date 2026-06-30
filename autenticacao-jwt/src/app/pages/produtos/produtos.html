@@ -50,7 +50,7 @@
             <th>Nome</th>
             <th>Preço</th>
             <th>Categoria</th>
-            <th>Descrição resumida</th>
+            <th>Descrição</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -58,12 +58,14 @@
           @for (produto of produtosFiltrados(); track produto.id) {
             <tr>
               <td>
-                <img
-                  #imagem
-                  [src]="imagemProduto(produto)"
-                  [alt]="produto.title"
-                  (error)="imagem.src = 'https://placehold.co/320x240/eef3f8/52606d?text=Produto'"
-                />
+                <button class="imagem-produto-botao" type="button" (click)="abrirDetalhe(produto)">
+                  <img
+                    #imagem
+                    [src]="imagemProduto(produto)"
+                    [alt]="produto.title"
+                    (error)="imagem.src = 'https://placehold.co/320x240/eef3f8/52606d?text=Produto'"
+                  />
+                </button>
               </td>
               <td>
                 <strong>{{ produto.title }}</strong>
@@ -95,3 +97,28 @@
   (cancelar)="modalAberto.set(false)"
   (confirmar)="confirmarExclusao()"
 />
+
+@if (detalheAberto() && produtoDetalhe(); as produto) {
+  <div class="detalhe-backdrop" (click)="fecharDetalhe()">
+    <section class="detalhe-modal" (click)="$event.stopPropagation()">
+      <button class="detalhe-fechar" type="button" aria-label="Fechar detalhes" (click)="fecharDetalhe()">×</button>
+
+      <div class="detalhe-imagem">
+        <img
+          #imagemDetalhe
+          [src]="imagemProduto(produto)"
+          [alt]="produto.title"
+          (error)="imagemDetalhe.src = 'https://placehold.co/640x420/eef3f8/52606d?text=Produto'"
+        />
+      </div>
+
+      <div class="detalhe-conteudo">
+        <span>{{ produto.category.name }}</span>
+        <h3>{{ produto.title }}</h3>
+        <p>{{ produto.description }}</p>
+      </div>
+
+      <strong class="detalhe-preco">{{ produto.price | currency: 'BRL' }}</strong>
+    </section>
+  </div>
+}
