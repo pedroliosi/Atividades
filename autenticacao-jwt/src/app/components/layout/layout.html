@@ -12,7 +12,14 @@
 
     <div class="usuario-area">
       @if (menuUsuarioAberto()) {
-        <button class="botao-sair" type="button" (click)="sair()">Sair</button>
+        <button class="botao-sair" type="button" (click)="sair()">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <path d="M16 17l5-5-5-5" />
+            <path d="M21 12H9" />
+          </svg>
+          Logout
+        </button>
       }
 
       <button class="usuario-botao" type="button" (click)="alternarMenuUsuario()" [class.aberto]="menuUsuarioAberto()">

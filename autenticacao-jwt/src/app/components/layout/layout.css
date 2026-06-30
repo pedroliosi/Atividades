@@ -45,42 +45,72 @@
 
 nav {
   display: grid;
-  gap: 4px;
+  gap: 8px;
+  padding: 4px 0;
 }
 
 nav a {
   background: transparent;
   border: 0;
-  border-radius: 6px;
-  color: #c9cdd2;
+  border-radius: 8px;
+  color: #c4c9cf;
   cursor: pointer;
   font: inherit;
   font-size: 0.95rem;
   font-weight: 500;
-  padding: 11px 12px;
+  opacity: 0.72;
+  padding: 13px 14px;
+  position: relative;
   text-align: left;
   text-decoration: none;
-  transform: translate(0, 0);
+  transform: scale(0.98);
+  transform-origin: left center;
   transition:
     background 0.2s ease,
     color 0.2s ease,
+    opacity 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
-nav a:hover,
-nav a.ativo {
-  background: rgba(255, 255, 255, 0.08);
+nav a::before {
+  background: #ffffff;
+  border-radius: 999px;
+  content: "";
+  height: 18px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0.55);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  width: 3px;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
-  transform: translate(-4px, -3px);
+  opacity: 0.9;
+  transform: scale(1);
 }
 
 nav a.ativo {
-  box-shadow: inset 3px 0 0 #f5f6f7;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  color: #ffffff;
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+nav a.ativo::before {
+  opacity: 1;
+  transform: translateY(-50%) scaleY(1);
 }
 
 nav a:active {
-  transform: translate(-3px, -2px) scale(0.99);
+  transform: scale(1.01);
 }
 
 .usuario-area {
@@ -162,13 +192,26 @@ nav a:active {
 }
 
 .botao-sair {
+  align-items: center;
   animation: aparecerMenu 0.18s ease;
   background: rgba(255, 255, 255, 0.07);
   color: #f5f6f7;
+  display: flex;
+  gap: 8px;
   font-weight: 500;
   padding: 11px 12px;
   text-align: left;
   width: 100%;
+}
+
+.botao-sair svg {
+  fill: none;
+  height: 18px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 18px;
 }
 
 .botao-sair:hover {
@@ -228,7 +271,12 @@ footer {
   }
 
   nav a {
+    transform-origin: center;
     text-align: center;
+  }
+
+  nav a::before {
+    display: none;
   }
 
   .usuario-area {
