@@ -60,17 +60,27 @@ nav a {
   padding: 11px 12px;
   text-align: left;
   text-decoration: none;
-  transition: 0.2s ease;
+  transform: translate(0, 0);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 nav a:hover,
 nav a.ativo {
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+  transform: translate(-4px, -3px);
 }
 
 nav a.ativo {
   box-shadow: inset 3px 0 0 #f5f6f7;
+}
+
+nav a:active {
+  transform: translate(-3px, -2px) scale(0.99);
 }
 
 .usuario-area {
