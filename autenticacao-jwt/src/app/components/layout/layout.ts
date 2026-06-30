@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { AuthService } from '../../core/services/auth.service';
@@ -11,7 +11,13 @@ import { AuthService } from '../../core/services/auth.service';
   styleUrl: './layout.css',
 })
 export class Layout {
+  readonly menuUsuarioAberto = signal(false);
+
   constructor(private readonly authService: AuthService) {}
+
+  alternarMenuUsuario(): void {
+    this.menuUsuarioAberto.update((aberto) => !aberto);
+  }
 
   sair(): void {
     this.authService.sair();

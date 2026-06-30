@@ -45,8 +45,7 @@ nav {
   gap: 10px;
 }
 
-nav a,
-nav button {
+nav a {
   background: transparent;
   border: 0;
   border-radius: 8px;
@@ -60,11 +59,102 @@ nav button {
 }
 
 nav a:hover,
-nav button:hover,
 nav a.ativo {
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   transform: translateX(3px);
+}
+
+.usuario-area {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.usuario-botao,
+.botao-sair {
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.2s ease;
+}
+
+.usuario-botao {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.11);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 44px minmax(0, 1fr) 22px;
+  padding: 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.usuario-botao:hover,
+.usuario-botao.aberto {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.avatar {
+  align-items: center;
+  background: #2dd4bf;
+  border-radius: 999px;
+  color: #102033;
+  display: grid;
+  font-weight: 900;
+  height: 44px;
+  justify-items: center;
+  width: 44px;
+}
+
+.usuario-info {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.usuario-info strong,
+.usuario-info small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.usuario-info strong {
+  font-size: 0.95rem;
+}
+
+.usuario-info small {
+  color: #bfd2e4;
+  font-size: 0.78rem;
+}
+
+.seta {
+  color: #d7e4ef;
+  font-size: 1.2rem;
+  justify-self: end;
+  transition: 0.2s ease;
+}
+
+.usuario-botao.aberto .seta {
+  transform: rotate(180deg);
+}
+
+.botao-sair {
+  animation: aparecerMenu 0.18s ease;
+  background: rgba(255, 228, 230, 0.14);
+  color: #ffe4e6;
+  font-weight: 800;
+  padding: 12px 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.botao-sair:hover {
+  background: rgba(255, 228, 230, 0.22);
+  transform: translateY(-2px);
 }
 
 .conteudo {
@@ -115,15 +205,30 @@ footer {
   }
 
   nav {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  nav a,
-  nav button {
+  nav a {
     text-align: center;
+  }
+
+  .usuario-area {
+    margin-top: 0;
   }
 
   main {
     padding: 18px;
+  }
+}
+
+@keyframes aparecerMenu {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

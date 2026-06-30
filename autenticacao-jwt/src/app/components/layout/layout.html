@@ -8,8 +8,22 @@
     <nav>
       <a routerLink="/produtos" routerLinkActive="ativo">🏠 Produtos</a>
       <a routerLink="/categorias" routerLinkActive="ativo">📂 Categorias</a>
-      <button type="button" (click)="sair()">🚪 Sair</button>
     </nav>
+
+    <div class="usuario-area">
+      @if (menuUsuarioAberto()) {
+        <button class="botao-sair" type="button" (click)="sair()">🚪 Sair</button>
+      }
+
+      <button class="usuario-botao" type="button" (click)="alternarMenuUsuario()" [class.aberto]="menuUsuarioAberto()">
+        <span class="avatar">A</span>
+        <span class="usuario-info">
+          <strong>Administrador</strong>
+          <small>admin@mail.com</small>
+        </span>
+        <span class="seta">⌃</span>
+      </button>
+    </div>
   </aside>
 
   <div class="conteudo">
