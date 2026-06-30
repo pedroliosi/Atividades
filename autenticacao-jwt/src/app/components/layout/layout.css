@@ -121,12 +121,15 @@ nav a:active {
 
 .usuario-botao,
 .botao-sair {
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 6px;
   color: #ffffff;
   cursor: pointer;
   font: inherit;
-  transition: 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.18s ease;
 }
 
 .usuario-botao {
@@ -143,6 +146,7 @@ nav a:active {
 .usuario-botao:hover,
 .usuario-botao.aberto {
   background: rgba(255, 255, 255, 0.11);
+  transform: translateY(-1px);
 }
 
 .avatar {
@@ -216,6 +220,13 @@ nav a:active {
 
 .botao-sair:hover {
   background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.usuario-botao:active,
+.botao-sair:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .conteudo {

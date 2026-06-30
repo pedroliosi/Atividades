@@ -83,14 +83,22 @@ td strong {
   position: absolute;
   right: 14px;
   top: 14px;
-  transition: 0.2s ease;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.18s ease;
   width: 38px;
   z-index: 2;
 }
 
 .detalhe-fechar:hover {
   background: #f3f4f6;
-  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.detalhe-fechar:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .detalhe-imagem {
@@ -130,6 +138,7 @@ td strong {
   line-height: 1.65;
   margin: 0;
   overflow: auto;
+  text-align: justify;
 }
 
 .detalhe-preco {
