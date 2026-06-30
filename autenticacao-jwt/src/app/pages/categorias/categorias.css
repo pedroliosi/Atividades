@@ -9,7 +9,7 @@
   background: #ffffff;
   border: 1px solid #dce5ee;
   border-radius: 8px;
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
   overflow: hidden;
 }
 
@@ -18,8 +18,8 @@
 }
 
 .categoria-card:hover {
-  box-shadow: 0 22px 46px rgba(15, 23, 42, 0.13);
-  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
 }
 
 .categoria-card img {
@@ -34,6 +34,7 @@
 
 .categoria-card h3 {
   color: #172033;
+  font-weight: 500;
   margin: 0 0 14px;
 }
 
@@ -44,6 +45,6 @@
 
 .vazio-card {
   color: #52606d;
-  font-weight: 800;
+  font-weight: 500;
   padding: 30px;
 }

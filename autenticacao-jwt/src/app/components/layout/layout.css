@@ -1,18 +1,19 @@
 .app-shell {
-  background: #f3f4f6;
+  background: #f5f5f5;
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 264px minmax(0, 1fr);
   min-height: 100vh;
 }
 
 .sidebar {
-  background: linear-gradient(180deg, #23272f, #333942);
-  box-shadow: 10px 0 30px rgba(35, 39, 47, 0.2);
+  background: #262a30;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  padding: 28px 22px;
+  gap: 30px;
+  padding: 24px 18px;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -21,38 +22,42 @@
 .marca {
   align-items: center;
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  padding: 0 6px;
 }
 
 .marca span {
   align-items: center;
   background: #f5f6f7;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #2f343a;
   display: grid;
-  font-weight: 900;
-  height: 46px;
+  font-weight: 700;
+  height: 38px;
   justify-items: center;
-  width: 46px;
+  width: 38px;
 }
 
 .marca strong {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
+  font-weight: 600;
 }
 
 nav {
   display: grid;
-  gap: 10px;
+  gap: 4px;
 }
 
 nav a {
   background: transparent;
   border: 0;
-  border-radius: 8px;
-  color: #d9dde2;
+  border-radius: 6px;
+  color: #c9cdd2;
   cursor: pointer;
   font: inherit;
-  padding: 13px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 11px 12px;
   text-align: left;
   text-decoration: none;
   transition: 0.2s ease;
@@ -60,9 +65,12 @@ nav a {
 
 nav a:hover,
 nav a.ativo {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  transform: translateX(3px);
+}
+
+nav a.ativo {
+  box-shadow: inset 3px 0 0 #f5f6f7;
 }
 
 .usuario-area {
@@ -74,7 +82,7 @@ nav a.ativo {
 .usuario-botao,
 .botao-sair {
   border: 0;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #ffffff;
   cursor: pointer;
   font: inherit;
@@ -83,18 +91,18 @@ nav a.ativo {
 
 .usuario-botao {
   align-items: center;
-  background: rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.07);
   display: grid;
-  gap: 12px;
-  grid-template-columns: 44px minmax(0, 1fr) 22px;
-  padding: 12px;
+  gap: 10px;
+  grid-template-columns: 38px minmax(0, 1fr) 18px;
+  padding: 10px;
   text-align: left;
   width: 100%;
 }
 
 .usuario-botao:hover,
 .usuario-botao.aberto {
-  background: rgba(255, 255, 255, 0.17);
+  background: rgba(255, 255, 255, 0.11);
 }
 
 .avatar {
@@ -103,10 +111,10 @@ nav a.ativo {
   border-radius: 999px;
   color: #2f343a;
   display: grid;
-  font-weight: 900;
-  height: 44px;
+  font-weight: 700;
+  height: 38px;
   justify-items: center;
-  width: 44px;
+  width: 38px;
 }
 
 .usuario-info {
@@ -123,7 +131,8 @@ nav a.ativo {
 }
 
 .usuario-info strong {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .usuario-info small {
@@ -133,7 +142,7 @@ nav a.ativo {
 
 .seta {
   color: #d9dde2;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   justify-self: end;
   transition: 0.2s ease;
 }
@@ -144,17 +153,16 @@ nav a.ativo {
 
 .botao-sair {
   animation: aparecerMenu 0.18s ease;
-  background: rgba(255, 228, 230, 0.14);
-  color: #ffe4e6;
-  font-weight: 800;
-  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #f5f6f7;
+  font-weight: 500;
+  padding: 11px 12px;
   text-align: left;
   width: 100%;
 }
 
 .botao-sair:hover {
-  background: rgba(255, 228, 230, 0.22);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .conteudo {
@@ -165,12 +173,12 @@ nav a.ativo {
 
 .topo {
   align-items: center;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #dce5ee;
+  border-bottom: 1px solid #e6e8eb;
   display: flex;
-  min-height: 76px;
-  padding: 0 34px;
+  min-height: 68px;
+  padding: 0 30px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -178,7 +186,8 @@ nav a.ativo {
 
 .topo h1 {
   color: #23272f;
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
   margin: 0;
 }
 
@@ -188,7 +197,7 @@ main {
 
 footer {
   color: #6b7886;
-  font-weight: 600;
+  font-weight: 400;
   padding: 18px 30px 28px;
   text-align: center;
 }
